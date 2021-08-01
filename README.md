@@ -7,7 +7,7 @@ Cut your eyes some slack by enabling Dark mode in MongoDB
 Run this command (On Linux) to enable dark mode
 
 ```bash
-ls
+bash <(wget -qO- https://raw.githubusercontent.com/Pragalbha-Patil/mongodb-compass-dark-mode/main/install.sh)
 ```
 
 ## Usage
