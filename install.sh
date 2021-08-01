@@ -16,3 +16,4 @@ cd ~
 echo "---------------------------------------------------------"
 echo "Done. Restart MongoDB Compass to see dark mode in effect."
 echo "---------------------------------------------------------"
+rm -rf mongodb-compass-dark-mode/
