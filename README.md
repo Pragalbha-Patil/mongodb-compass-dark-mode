@@ -4,11 +4,11 @@ Cut your eyes some slack by enabling Dark mode in MongoDB
 
 ## Installation
 
-Prerequisites
+Prerequisites:
 
 Make sure you've installed MongoDB Compass before running this script.
 
-Other prerequisites include
+Other prerequisites include:
 ```bash
 git wget
 ```
