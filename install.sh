@@ -2,8 +2,9 @@
 cd ~
 git clone https://github.com/Pragalbha-Patil/mongodb-compass-dark-mode.git
 cd mongodb-compass-dark-mode/
-npx asar pack ./ app.asar.new
-sleep 10
+npx asar pack ./ app.asar.new &
+BACK_PID=$!
+wait $BACK_PID
 sudo cp app.asar.new /usr/lib/mongodb-compass/resources/
 cd /usr/lib/mongodb-compass/resources/
 sudo mv app.asar app.asar.old
