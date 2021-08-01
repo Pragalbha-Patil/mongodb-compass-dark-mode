@@ -4,6 +4,11 @@ Cut your eyes some slack by enabling Dark mode in MongoDB
 
 ## Installation
 
+Prerequisites
+```bash
+git npx nodejs
+```
+
 Run this command (On Linux) to enable dark mode
 
 ```bash
