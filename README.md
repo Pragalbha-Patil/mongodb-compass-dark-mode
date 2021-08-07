@@ -19,8 +19,11 @@ Run this command (On Linux) to enable dark mode
 bash <(wget -qO- https://raw.githubusercontent.com/Pragalbha-Patil/mongodb-compass-dark-mode/main/install.sh)
 ```
 
-## Usage
-Open Dev Tools in MongoDB Compass and in console type,
-```javascript
-toggleDarkMode();
-```
+## Help, the script doesn't work
+Don't worry, I've added the app.asar (compressed) to this project itself, so incase the script doesn't work, just 
+
+1. clone the repo, decompress the [app.asar.tar.gz](https://github.com/Pragalbha-Patil/mongodb-compass-dark-mode/blob/main/app.asar.tar.gz), you should have the original app.asar file.
+2. Now you should have the app.asar file, now find out where mongodb-compass is installed by this command: ```bash which mongodb-compass``` (Note: Linux usually lists the symlink file and not the original directory, so when you find the location, cd there and do ```bash ls -al``` to find the OG location
+3. Once you have that, cd to the OG location (In my case: It was at ```/usr/lib/mongodb-compass```)
+4. then cd to its ```resources/``` directory (ex. ```/usr/lib/mongodb-compass/resources```) and replace the app.asar with downloaded app.asar (Remember to backup incase something goes wrong.)
+5. That's it.
