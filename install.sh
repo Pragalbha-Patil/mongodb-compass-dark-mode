@@ -15,4 +15,7 @@ cd ~
 rm -rf mongodb-compass-dark-mode/
 echo "---------------------------------------------------------"
 echo "Done. Restart MongoDB Compass to see dark mode in effect."
+echo "Incase your mongo failed to start, restore the backup located at: /usr/lib/mongodb-compass/resources/app.asar.old"
+echo "By deleting the current app.asar and renaming the app.asar.old to app.asar"
+echo "Cheers!"
 echo "---------------------------------------------------------"
