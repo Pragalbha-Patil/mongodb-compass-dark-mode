@@ -8,7 +8,8 @@ while kill -0 $BACK_PID ; do
     echo "Decompressing the new app.asar. Please wait..."
     sleep 10
 done
-sudo mv /usr/lib/mongodb-compass/resources/app.asar app.asar.old
+# fixed the deletion of backup, thanks to: https://github.com/Pragalbha-Patil/mongodb-compass-dark-mode/issues/1
+sudo mv /usr/lib/mongodb-compass/resources/app.asar /usr/lib/mongodb-compass/resources/app.asar.old
 sudo mv app.asar /usr/lib/mongodb-compass/resources/
 cd ~
 rm -rf mongodb-compass-dark-mode/
