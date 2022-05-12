@@ -20,6 +20,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/Pragalbha-Patil/mongodb-compa
 ```
 
 Note: The code is updated to work with mongodb latest version: 1.13.1
+
 Also note: The dark mode is applied after 5 seconds when mongodb finishes loading everything.
 
 Inspiration: https://www.reddit.com/r/mongodb/comments/mj1zr0/successfully_achieved_darkmode_for_mongodb_compass/
