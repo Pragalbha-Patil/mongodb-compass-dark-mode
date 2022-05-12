@@ -27,3 +27,5 @@ Don't worry, I've added the app.asar (compressed) to this project itself, so inc
 3. Once you have that, cd to the OG location (In my case: It was at ```/usr/lib/mongodb-compass```)
 4. then cd to its ```resources/``` directory (ex. ```/usr/lib/mongodb-compass/resources```) and replace the app.asar with downloaded app.asar (Remember to backup incase something goes wrong.)
 5. That's it.
+
+Inspiration: https://www.reddit.com/r/mongodb/comments/mj1zr0/successfully_achieved_darkmode_for_mongodb_compass/
