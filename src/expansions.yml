@@ -1,0 +1,339 @@
+dir: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass
+out: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist
+pkg.name: mongodb-compass
+pkg.private: true
+pkg.productName: MongoDB Compass
+pkg.description: The MongoDB GUI
+pkg.homepage: 'https://compass.mongodb.com'
+pkg.version: 1.31.1
+pkg.apiVersion: 3.0.0
+pkg.main: build/main.js
+pkg.author.name: MongoDB Inc
+pkg.author.email: compass@mongodb.com
+pkg.shortcutFolderName: MongoDB
+pkg.license: SSPL
+pkg.config.hadron.endpoint: 'https://compass.mongodb.com'
+'pkg.config.hadron.protocols[0].name': MongoDB Protocol
+'pkg.config.hadron.protocols[0].schemes[0]': mongodb
+'pkg.config.hadron.protocols[1].name': MongoDB Compass Protocol
+'pkg.config.hadron.protocols[1].schemes[0]': compass
+pkg.config.hadron.distributions.default: compass
+pkg.config.hadron.distributions.compass.name: mongodb-compass
+pkg.config.hadron.distributions.compass.productName: MongoDB Compass
+pkg.config.hadron.distributions.compass.bundleId: com.mongodb.compass
+pkg.config.hadron.distributions.compass.plugins-directory: .mongodb/compass/plugins
+pkg.config.hadron.distributions.compass.upgradeCode: 0152273D-2F9F-4913-B67F-0FCD3557FFD1
+pkg.config.hadron.distributions.compass-readonly.name: mongodb-compass-readonly
+pkg.config.hadron.distributions.compass-readonly.productName: MongoDB Compass Readonly
+pkg.config.hadron.distributions.compass-readonly.bundleId: com.mongodb.compass.readonly
+pkg.config.hadron.distributions.compass-readonly.plugins-directory: .mongodb/compass-readonly/plugins
+pkg.config.hadron.distributions.compass-readonly.upgradeCode: 2176EC1D-EF71-49D4-B3B4-9E15B289D79A
+pkg.config.hadron.distributions.compass-readonly.readonly: true
+pkg.config.hadron.distributions.compass-isolated.name: mongodb-compass-isolated
+pkg.config.hadron.distributions.compass-isolated.productName: MongoDB Compass Isolated Edition
+pkg.config.hadron.distributions.compass-isolated.bundleId: com.mongodb.compass.isolated
+pkg.config.hadron.distributions.compass-isolated.plugins-directory: .mongodb/compass-isolated/plugins
+pkg.config.hadron.distributions.compass-isolated.upgradeCode: 516F2BE1-4417-4F31-BAA1-364A59404775
+pkg.config.hadron.distributions.compass-isolated.isolated: true
+pkg.config.hadron.build.win32.icon: app-icons/win32/mongodb-compass.ico
+pkg.config.hadron.build.win32.favicon_url: 'https://compass.mongodb.com/favicon.ico'
+pkg.config.hadron.build.win32.loading_gif: app-icons/win32/mongodb-compass-installer-loading.gif
+pkg.config.hadron.build.win32.background: app-icons/win32/background.jpg
+pkg.config.hadron.build.win32.banner: app-icons/win32/banner.jpg
+pkg.config.hadron.build.darwin.icon: app-icons/darwin/mongodb-compass.icns
+pkg.config.hadron.build.darwin.dmg_background: app-icons/darwin/background.png
+pkg.config.hadron.build.darwin.app_category_type: public.app-category.productivity
+pkg.config.hadron.build.linux.icon: app-icons/linux/mongodb-compass.png
+pkg.config.hadron.build.linux.deb_section: Databases
+'pkg.config.hadron.build.linux.rpm_categories[0]': Office
+'pkg.config.hadron.build.linux.rpm_categories[1]': Database
+'pkg.config.hadron.build.linux.rpm_categories[2]': Building
+'pkg.config.hadron.build.linux.rpm_categories[3]': Debugger
+'pkg.config.hadron.build.linux.rpm_categories[4]': IDE
+'pkg.config.hadron.build.linux.rpm_categories[5]': GUIDesigner
+'pkg.config.hadron.build.linux.rpm_categories[6]': Profiling
+'pkg.config.hadron.asar.unpack[0]': '**/@mongosh/node-runtime-worker-thread/**'
+'pkg.config.hadron.asar.unpack[1]': '**/interruptor/**'
+'pkg.config.hadron.asar.unpack[2]': '**/kerberos/**'
+'pkg.config.hadron.asar.unpack[3]': '**/snappy/**'
+'pkg.config.hadron.asar.unpack[4]': '**/mongodb-client-encryption/index.js'
+'pkg.config.hadron.asar.unpack[5]': '**/mongodb-client-encryption/package.json'
+'pkg.config.hadron.asar.unpack[6]': '**/mongodb-client-encryption/lib/**'
+'pkg.config.hadron.asar.unpack[7]': '**/mongodb-client-encryption/build/**'
+'pkg.config.hadron.asar.unpack[8]': '**/bl/**'
+'pkg.config.hadron.asar.unpack[9]': '**/nan/**'
+'pkg.config.hadron.asar.unpack[10]': '**/node_modules/bindings/**'
+'pkg.config.hadron.asar.unpack[11]': '**/file-uri-to-path/**'
+'pkg.config.hadron.asar.unpack[12]': '**/bson/**'
+'pkg.config.hadron.asar.unpack[13]': '**/os-dns-native/**'
+'pkg.config.hadron.asar.unpack[14]': '**/debug/**'
+'pkg.config.hadron.asar.unpack[15]': '**/ms/**'
+'pkg.config.hadron.asar.unpack[16]': '**/bindings/**'
+'pkg.config.hadron.asar.unpack[17]': '**/ipv6-normalize/**'
+'pkg.config.hadron.asar.unpack[18]': '**/node-addon-api/**'
+'pkg.config.hadron.asar.unpack[19]': '**/win-export-certificate-and-key/**'
+'pkg.config.hadron.asar.unpack[20]': '**/macos-export-certificate-and-key/**'
+'pkg.config.hadron.asar.unpack[21]': '**/system-ca/**'
+'pkg.config.hadron.rebuild.onlyModules[0]': interruptor
+'pkg.config.hadron.rebuild.onlyModules[1]': keytar
+'pkg.config.hadron.rebuild.onlyModules[2]': kerberos
+'pkg.config.hadron.rebuild.onlyModules[3]': os-dns-native
+'pkg.config.hadron.rebuild.onlyModules[4]': win-export-certificate-and-key
+'pkg.config.hadron.rebuild.onlyModules[5]': macos-export-certificate-and-key
+pkg.config.hadron.macosEntitlements: ./scripts/macos-entitlements.xml
+pkg.scripts.install: node scripts/download-akzidenz.js
+pkg.scripts.electron-rebuild: >-
+  electron-rebuild --only
+  kerberos,keytar,interruptor,os-dns-native,win-export-certificate-and-key,macos-export-certificate-and-key
+  --force --prebuild-tag-prefix not-real-prefix-to-force-rebuild
+pkg.scripts.prestart: npm run electron-rebuild
+pkg.scripts.start: npm run webpack serve -- --mode development
+pkg.scripts.test-electron: npm run test-main && npm run test-renderer
+pkg.scripts.test-main: >-
+  xvfb-maybe electron-mocha --no-sandbox "./src/main/**/*.spec.*" 
+  "./src/main/**/*.test.*"
+pkg.scripts.test-renderer: >-
+  xvfb-maybe electron-mocha --no-sandbox --config ./.mocharc.renderer.js
+  "./src/app/**/*.spec.js"
+pkg.scripts.check: npm run lint && npm run depcheck
+pkg.scripts.prewebpack: rimraf ./build
+pkg.scripts.webpack: webpack-compass
+pkg.scripts.compile: npm run webpack -- --mode production
+pkg.scripts.release: node release/index.js
+pkg.scripts.package-compass: hadron-build release
+pkg.scripts.test-release-tasks: cross-env MONGODB_DOWNLOADS_AWS_ACCESS_KEY_ID='' mocha "./release/*.spec.js"
+pkg.scripts.upload: hadron-build upload
+pkg.scripts.evergreen-expansions: hadron-build info --format=yaml --flatten > expansions.yml
+pkg.scripts.build-info: hadron-build info
+pkg.scripts.jsx: babel ./src --out-dir ./lib
+pkg.scripts.lint: eslint
+pkg.scripts.depcheck: depcheck
+pkg.scripts.test-ci: npm run test-release-tasks
+pkg.scripts.test-ci-electron: npm run test-electron
+pkg.scripts.posttest-ci: node ../../scripts/killall-mongo.js
+pkg.repository.type: git
+pkg.repository.url: 'git+https://github.com/mongodb-js/compass.git'
+pkg.bugs.url: 'https://jira.mongodb.org/projects/COMPASS/issues'
+pkg.bugs.email: compass@mongodb.com
+pkg.dependencies.@mongodb-js/compass-components: ^0.13.0
+pkg.dependencies.@mongosh/node-runtime-worker-thread: ^1.2.3
+pkg.dependencies.clipboard: ^2.0.6
+pkg.dependencies.kerberos: ^2.0.0
+pkg.dependencies.keytar: ^7.7.0
+pkg.dependencies.os-dns-native: ^1.2.0
+pkg.dependencies.mongodb-client-encryption: ^2.0.0
+pkg.dependencies.system-ca: ^1.0.2
+pkg.dependencies.vscode-windows-registry: 1.0.2
+pkg.dependencies.macos-export-certificate-and-key: ^1.1.1
+pkg.dependencies.win-export-certificate-and-key: ^1.1.1
+pkg.devDependencies.@mongodb-js/compass-aggregations: ^8.22.0
+pkg.devDependencies.@mongodb-js/compass-app-stores: ^5.21.0
+pkg.devDependencies.@mongodb-js/compass-auto-updates: ^3.21.0
+pkg.devDependencies.@mongodb-js/compass-collection: ^3.24.0
+pkg.devDependencies.@mongodb-js/compass-collection-stats: ^6.21.0
+pkg.devDependencies.@mongodb-js/compass-connect: ^7.21.0
+pkg.devDependencies.@mongodb-js/compass-crud: ^12.22.0
+pkg.devDependencies.@mongodb-js/compass-database: ^2.21.0
+pkg.devDependencies.@mongodb-js/compass-databases-collections: ^0.22.0
+pkg.devDependencies.@mongodb-js/compass-deployment-awareness: ^11.21.0
+pkg.devDependencies.@mongodb-js/compass-explain-plan: ^5.24.0
+pkg.devDependencies.@mongodb-js/compass-export-to-language: ^7.21.0
+pkg.devDependencies.@mongodb-js/compass-field-store: ^7.21.0
+pkg.devDependencies.@mongodb-js/compass-find-in-page: ^3.21.0
+pkg.devDependencies.@mongodb-js/compass-home: ^5.24.0
+pkg.devDependencies.@mongodb-js/compass-import-export: ^6.22.0
+pkg.devDependencies.@mongodb-js/compass-indexes: ^4.23.0
+pkg.devDependencies.@mongodb-js/compass-instance: ^3.21.0
+pkg.devDependencies.@mongodb-js/compass-logging: ^0.10.0
+pkg.devDependencies.@mongodb-js/compass-metrics: ^4.21.0
+pkg.devDependencies.@mongodb-js/compass-plugin-info: ^3.21.0
+pkg.devDependencies.@mongodb-js/compass-query-bar: ^7.20.0
+pkg.devDependencies.@mongodb-js/compass-query-history: ^8.21.0
+pkg.devDependencies.@mongodb-js/compass-saved-aggregations-queries: ^0.5.0
+pkg.devDependencies.@mongodb-js/compass-schema: ^5.21.0
+pkg.devDependencies.@mongodb-js/compass-schema-validation: ^5.22.0
+pkg.devDependencies.@mongodb-js/compass-server-version: ^5.21.0
+pkg.devDependencies.@mongodb-js/compass-serverstats: ^15.21.0
+pkg.devDependencies.@mongodb-js/compass-shell: ^2.22.0
+pkg.devDependencies.@mongodb-js/compass-sidebar: ^4.22.0
+pkg.devDependencies.@mongodb-js/compass-ssh-tunnel-status: ^6.21.0
+pkg.devDependencies.@mongodb-js/dl-center: ^1.0.1
+pkg.devDependencies.@mongodb-js/eslint-config-compass: ^0.7.0
+pkg.devDependencies.@mongodb-js/hadron-plugin-manager: ^6.12.0
+pkg.devDependencies.@mongodb-js/mocha-config-compass: ^0.10.0
+pkg.devDependencies.@mongodb-js/prettier-config-compass: ^0.5.0
+pkg.devDependencies.@mongodb-js/tsconfig-compass: ^0.6.0
+pkg.devDependencies.@mongodb-js/webpack-config-compass: ^0.7.0
+pkg.devDependencies.@octokit/rest: ^18.5.3
+pkg.devDependencies.@types/analytics-node: ^3.1.7
+pkg.devDependencies.ampersand-model: ^8.0.1
+pkg.devDependencies.ampersand-rest-collection: ^6.0.0
+pkg.devDependencies.ampersand-router: ^3.0.2
+pkg.devDependencies.ampersand-view: ^9.0.0
+pkg.devDependencies.analytics-node: ^5.1.2
+pkg.devDependencies.app-migrations: ^2.10.0
+pkg.devDependencies.async: ^3.2.0
+pkg.devDependencies.bootstrap: 'https://github.com/twbs/bootstrap/archive/v3.3.5.tar.gz'
+pkg.devDependencies.chai: ^4.3.4
+pkg.devDependencies.chalk: ^4.1.1
+pkg.devDependencies.clean-stack: ^2.0.0
+pkg.devDependencies.cli-ux: ^5.5.1
+pkg.devDependencies.compass-preferences-model: ^1.21.0
+pkg.devDependencies.compass-user-model: ^1.21.0
+pkg.devDependencies.cross-env: ^7.0.3
+pkg.devDependencies.darkreader: ^4.9.40
+pkg.devDependencies.debug: 4.3.0
+pkg.devDependencies.debug-menu: ^0.3.0
+pkg.devDependencies.depcheck: ^1.4.1
+pkg.devDependencies.electron: ^13.5.1
+pkg.devDependencies.electron-devtools-installer: ^3.2.0
+pkg.devDependencies.electron-mocha: ^10.1.0
+pkg.devDependencies.electron-rebuild: ^3.2.7
+pkg.devDependencies.electron-squirrel-startup: ^1.0.0
+pkg.devDependencies.ensure-error: ^3.0.1
+pkg.devDependencies.eslint: ^7.25.0
+pkg.devDependencies.execa: ^5.1.1
+pkg.devDependencies.fs-extra: ^9.1.0
+pkg.devDependencies.hadron-app: ^4.21.0
+pkg.devDependencies.hadron-app-registry: ^8.10.0
+pkg.devDependencies.hadron-auto-update-manager: ^4.8.0
+pkg.devDependencies.hadron-build: ^24.15.0
+pkg.devDependencies.hadron-ipc: ^2.9.0
+pkg.devDependencies.jquery: ^3.5.0
+pkg.devDependencies.listr: ^0.14.3
+pkg.devDependencies.local-links: ^1.4.0
+pkg.devDependencies.lodash: ^4.17.21
+pkg.devDependencies.make-fetch-happen: ^8.0.14
+pkg.devDependencies.marky: ^1.2.1
+pkg.devDependencies.mocha: ^8.4.0
+pkg.devDependencies.mongodb: ^4.4.0
+pkg.devDependencies.mongodb-connection-model: ^21.15.0
+pkg.devDependencies.mongodb-data-service: ^21.19.0
+pkg.devDependencies.mongodb-instance-model: ^11.21.0
+pkg.devDependencies.mongodb-log-writer: ^1.1.4
+pkg.devDependencies.mongodb-url: ^3.0.3
+pkg.devDependencies.nock: ^13.0.11
+pkg.devDependencies.node-notifier: ^9.0.1
+pkg.devDependencies.pkg-up: ^3.1.0
+pkg.devDependencies.qs: ^6.0.4
+pkg.devDependencies.react: ^16.14.0
+pkg.devDependencies.react-dom: ^16.14.0
+pkg.devDependencies.reflux: ^0.4.1
+pkg.devDependencies.rimraf: ^3.0.2
+pkg.devDependencies.semver: ^7.3.5
+pkg.devDependencies.sinon: ^8.1.1
+pkg.devDependencies.sinon-chai: ^3.7.0
+pkg.devDependencies.storage-mixin: ^4.13.0
+pkg.devDependencies.uuid: ^3.0.0
+pkg.devDependencies.web-vitals: ^2.1.2
+pkg.optionalDependencies.vscode-windows-registry: 1.0.2
+pkg.optionalDependencies.macos-export-certificate-and-key: ^1.1.1
+pkg.optionalDependencies.win-export-certificate-and-key: ^1.1.1
+pkg.engines.node: ^14.17.5
+pkg.engines.npm: '>=7.0.0'
+pkg._path: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/package.json
+pkg.readme: 'ERROR: No README data found!'
+pkg._id: mongodb-compass@1.31.1
+pkg.github_owner: mongodb-js
+pkg.github_repo: compass
+pkg.electronVersion: 13.5.1
+distribution: compass
+id: mongodb-compass
+name: mongodb-compass
+readonly: false
+isolated: false
+productName: MongoDB Compass
+bundleId: com.mongodb.compass
+upgradeCode: 0152273D-2F9F-4913-B67F-0FCD3557FFD1
+version: 1.31.1
+installerVersion: null
+platform: linux
+arch: x64
+description: The MongoDB GUI
+author: MongoDB Inc
+shortcutFolderName: MongoDB
+programFilesFolderName: null
+slug: mongodb-compass
+semver.options.loose: false
+semver.options.includePrerelease: false
+semver.loose: false
+semver.raw: 1.31.1
+semver.major: 1
+semver.minor: 31
+semver.patch: 1
+'semver.prerelease[]': null
+'semver.build[]': null
+semver.version: 1.31.1
+channel: stable
+autoUpdateBaseUrl: 'https://compass.mongodb.com'
+asar.unpack: '[Circular (pkg.config.hadron.asar.unpack)]'
+rebuild.onlyModules: '[Circular (pkg.config.hadron.rebuild.onlyModules)]'
+macosEntitlements: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/scripts/macos-entitlements.xml
+packagerOptions.dir: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass
+packagerOptions.out: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist
+packagerOptions.overwrite: true
+packagerOptions.appCopyright: 2022 MongoDB Inc
+packagerOptions.buildVersion: 1.31.1
+packagerOptions.appVersion: 1.31.1
+packagerOptions.prune: false
+packagerOptions.ignore: node_modules/|.cache/|dist/|test/|.user-data|.deps/
+packagerOptions.platform: linux
+packagerOptions.arch: x64
+packagerOptions.electronVersion: null
+packagerOptions.sign: null
+packagerOptions.name: MongoDB Compass
+appPath: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/MongoDB
+  Compass-linux-x64
+resources: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/MongoDB
+  Compass-linux-x64/resources
+linux_deb_filename: mongodb-compass_1.31.1_amd64.deb
+linux_rpm_filename: mongodb-compass-1.31.1.x86_64.rpm
+linux_tar_filename: mongodb-compass-1.31.1-linux-x64.tar.gz
+'assets[0].name': mongodb-compass_1.31.1_amd64.deb
+'assets[0].path': >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/mongodb-compass_1.31.1_amd64.deb
+'assets[1].name': mongodb-compass-1.31.1.x86_64.rpm
+'assets[1].path': >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/mongodb-compass-1.31.1.x86_64.rpm
+'assets[2].name': mongodb-compass-1.31.1-linux-x64.tar.gz
+'assets[2].path': >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/mongodb-compass-1.31.1-linux-x64.tar.gz
+installerOptions.deb.src: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/MongoDB
+  Compass-linux-x64
+installerOptions.deb.dest: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist
+installerOptions.deb.arch: amd64
+installerOptions.deb.icon: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/app-icons/linux/mongodb-compass.png
+installerOptions.deb.name: mongodb-compass
+installerOptions.deb.version: 1.31.1
+installerOptions.deb.bin: MongoDB Compass
+installerOptions.deb.section: Databases
+'installerOptions.deb.depends[0]': libsecret-1-0
+'installerOptions.deb.depends[1]': gnome-keyring
+'installerOptions.deb.depends[2]': libgconf-2-4
+installerOptions.rpm.src: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/MongoDB
+  Compass-linux-x64
+installerOptions.rpm.dest: /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist
+installerOptions.rpm.arch: x86_64
+installerOptions.rpm.icon: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/app-icons/linux/mongodb-compass.png
+installerOptions.rpm.name: mongodb-compass
+installerOptions.rpm.version: 1.31.1
+installerOptions.rpm.revision: '1'
+installerOptions.rpm.bin: MongoDB Compass
+'installerOptions.rpm.requires[0]': lsb-core-noarch
+'installerOptions.rpm.requires[1]': libXScrnSaver
+'installerOptions.rpm.requires[2]': gnome-keyring
+'installerOptions.rpm.requires[3]': libsecret
+'installerOptions.rpm.requires[4]': GConf2
+installerOptions.rpm.categories: '[Circular (pkg.config.hadron.build.linux.rpm_categories)]'
+installerOptions.rpm.license: SSPL
+app_archive_name: mongodb-compass-1.31.1-linux-x64.tar.gz
+resourcesAppDir: >-
+  /data/mci/d5ebea02439f368785de5377bd83d344/src/packages/compass/dist/MongoDB
+  Compass-linux-x64/resources/app

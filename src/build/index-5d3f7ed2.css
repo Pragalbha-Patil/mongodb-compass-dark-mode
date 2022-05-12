@@ -1,0 +1,86 @@
+.collections-module-collections-error__3jUlq {
+  padding: 16px;
+}
+
+.databases-module-databases-non-genuine-warning__2uyRR {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+.databases-module-databases-error__2p3Ry {
+  padding: 16px;
+}
+
+.field-set-module-field-set__9Gj34 {
+  margin: 16px 0px;
+}
+
+.collapsible-field-set-module-info-btn__1Z65w {
+  vertical-align: top;
+  margin-top: -4px;
+}
+.collapsible-field-set-module-description__2vgEd {
+  margin-top: 5px;
+}
+
+.time-series-fields-module-options-select-dropdown__3to9V {
+  z-index: 1;
+}
+.time-series-fields-module-options-select-dropdown__3to9V button:focus,
+.time-series-fields-module-options-select-dropdown__3to9V button:focus-within {
+  z-index: 20;
+}
+
+.collation-fields-module-options-select-dropdown__2ottj {
+  z-index: 1;
+}
+.collation-fields-module-options-select-dropdown__2ottj button:focus,
+.collation-fields-module-options-select-dropdown__2ottj button:focus-within {
+  z-index: 20;
+}
+
+.create-collection-modal-module-create-collection-modal__2cNh8 h1 {
+  margin-bottom: 30px;
+}
+.create-collection-modal-module-create-collection-modal__2cNh8 div[role=dialog] > :first-child {
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+.drop-collection-modal-module-drop-collection-modal-confirm__1FRYw i {
+  margin: 0px 4px 0px 2px;
+}
+.drop-collection-modal-module-drop-collection-modal-confirm-namespace__3hiCM {
+  font-weight: bold;
+  margin: 0px 4px 0px 4px;
+}
+.drop-collection-modal-module-drop-collection-modal-confirm-name__1YjCB {
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.create-database-modal-module-create-database-modal__HX_-p h1 {
+  margin-bottom: 30px;
+}
+.create-database-modal-module-create-database-modal__HX_-p div[role=dialog] > :first-child {
+  max-height: 80vh;
+  overflow: scroll;
+}
+.create-database-modal-module-collection-name-info-banner__2zlnV:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.drop-database-modal-module-drop-database-modal-confirm__2pNgo i {
+  margin: 0px 4px 0px 2px;
+}
+.drop-database-modal-module-drop-database-modal-confirm-namespace__3jvWr {
+  font-weight: bold;
+  margin: 0px 4px 0px 4px;
+}
+.drop-database-modal-module-drop-database-modal-confirm-name__229T_ {
+  font-weight: bold;
+  margin-left: 4px;
+}
+
